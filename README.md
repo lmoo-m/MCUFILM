@@ -1,36 +1,91 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# MCUFILM
 
-## Getting Started
+Next mcu movie schedule
 
-First, run the development server:
+## HOW TO RUN
+
+first install modules
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+  npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+running project
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+  npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## API Reference
 
-## Learn More
+API BY DilijotSG
 
-To learn more about Next.js, take a look at the following resources:
+Base url
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```http
+  https://www.whenisthenextmcufilm.com
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+#### Get items
 
-## Deploy on Vercel
+```http
+  GET /api
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+#### Result
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```javascript
+{
+  "days_until": 134,
+  "following_production": {
+    "days_until": 337,
+    "id": 822119,
+    "overview": "A sequel to Marvel Studios' The Falcon and the Winter Soldier and follows Sam Wilson as the new Captain America.",
+    "poster_url": "https://image.tmdb.org/t/p/w500/ghkjPyaPGMfDufOa4D2A51DFGWr.jpg",
+    "release_date": "2025-02-12",
+    "title": "Captain America: Brave New World",
+    "type": "Movie"
+  },
+  "id": 533535,
+  "overview": "Third entry in the \"Deadpool\" franchise. Plot TBA.",
+  "poster_url": "https://image.tmdb.org/t/p/w500/klux79RfMSZu7bb0ijdVPDeeuG7.jpg",
+  "release_date": "2024-07-24",
+  "title": "Deadpool & Wolverine",
+  "type": "Movie"
+}
+```
+
+#### Get items
+
+```http
+  GET /api?date={release_date}
+```
+
+#### Result
+
+```javascript
+{
+  "days_until": 337,
+  "following_production": {
+    "days_until": 415,
+    "id": 986056,
+    "overview": "A world without Avengers doesn't mean there's not a group of superheroes. There is a group and they're called the Thunderbolts.",
+    "poster_url": "https://image.tmdb.org/t/p/w500/9pKEuYSgEoQQwwngJXgeNOnJjr.jpg",
+    "release_date": "2025-05-01",
+    "title": "Thunderbolts",
+    "type": "Movie"
+  },
+  "id": 822119,
+  "overview": "A sequel to Marvel Studios' The Falcon and the Winter Soldier and follows Sam Wilson as the new Captain America.",
+  "poster_url": "https://image.tmdb.org/t/p/w500/ghkjPyaPGMfDufOa4D2A51DFGWr.jpg",
+  "release_date": "2025-02-12",
+  "title": "Captain America: Brave New World",
+  "type": "Movie"
+}
+```
+
+## 🔗 Links
+
+#### Github DilijotSG
+
+[![linkedin](https://img.shields.io/badge/github-000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/DiljotSG/MCU-Countdown.git)
